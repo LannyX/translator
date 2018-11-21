@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h2  style="text-overflow: ellipsis; overflow:hidden; white-space: nowrap; ">{{wikipedia.word}}</h2>
+      <div class="mb-3 subLink">
+        <a style="color:rgb(192, 172, 99) !important" href={{wikipedia.link}}>{{wikipedia.link}}</a>
+      </div>
+      <div style="height: 20rem; overflow-y:scroll; text-overflow: ellipsis; ">
+        <p >{{wikipedia.description}}</p>
+        <hr>
+        <div *ngIf="translatedWords.length >0">
+          <h4>Click on word to see it in English.</h4>
+        </div>
+        <app-word *ngFor="let word of translatedWords" [(word)]="word" [target]="'English'"></app-word>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-3">
+    <select class="form-control col-3" [(ngModel)]="selectTarget">
+      <option *ngFor="let target of targets" [value]="target">{{target}}</option>
+    </select>
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary" (click)="translate(wikipedia.description)">Translate</button>
+    </div>
+</div>
+
+<br>
+

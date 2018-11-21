@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div>
+  <div class="col-10 mx-auto p-0 interval">
+    <label for="text" >Enter word for Search from Wikipedia </label>
+    <div class="input-group input">
+      <input type="text" [(ngModel)]="searchText" name="first" >
+      <div class="input-group-append">
+        <button class="btn btn-warning" type="submit" (click)="search()">Search </button>
+      </div>
+    </div>
+
+
+    <div class="row no-gutters">
+      <div *ngFor="let wikipedia of wikipediaResults" class="col-8">
+        <app-main [(wikipedia)]="wikipedia"></app-main>
+      </div>
+    </div>
+  </div>
+</div>
