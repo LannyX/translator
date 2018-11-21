@@ -1,5 +1,5 @@
 
-# Learn a New Language
+# Learn A New Language
 
 This project is a web page app that allows users to search word from Wikipedia and translate them to different languages. Users can click on word to see the meaning of translated word as well. 
 Also has Admin, Login, Register and view history option.
